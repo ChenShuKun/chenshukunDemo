@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="AppleWatchDemo_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="SKP-V9-uuI">
+                            <items>
+                                <tableRow identifier="rowID" id="pnT-8u-JZJ" customClass="WatchTable" customModule="AppleWatchDemo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="vOX-LD-AOs">
+                                        <items>
+                                            <imageView width="40" alignment="left" verticalAlignment="center" id="Su7-un-jKy"/>
+                                            <label width="73.5" alignment="right" verticalAlignment="center" text="Label" id="NBR-tU-YzV"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="img" destination="Su7-un-jKy" id="CGV-EE-9mj"/>
+                                        <outlet property="loactionLabel" destination="NBR-tU-YzV" id="q4X-3j-Gti"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="SKP-V9-uuI" id="M2b-2e-yBW"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
