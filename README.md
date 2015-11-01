@@ -1,10 +1,9 @@
 # chenshukun
-  欢迎来到我的 github
-    只要心还在跳，就要努力学习。 —— 张海迪
+  欢迎来到我的 github \n
+    \n 只要心还在跳，就要努力学习。 —— 张海迪 \n
 
 
-忠实果粉
-email: Chenshukun66@gmail.com
+\n email: Chenshukun66@gmail.com
 
 
  
