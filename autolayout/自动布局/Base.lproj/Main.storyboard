@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="自动布局" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzz-30-xWg">
+                                <rect key="frame" x="20" y="260" width="560" height="320"/>
+                                <color key="backgroundColor" red="0.56379326760000004" green="1" blue="0.61930616540000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSC-ul-OWW">
+                                <rect key="frame" x="20" y="40" width="275.5" height="200"/>
+                                <color key="backgroundColor" red="0.22352941179999999" green="0.75686274509999996" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="dpL-2h-j50"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h6-KV-zZB">
+                                <rect key="frame" x="305" y="40" width="275" height="200"/>
+                                <color key="backgroundColor" red="1" green="0.1582998246" blue="0.17239675400000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zSC-ul-OWW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="7wN-hn-5eZ"/>
+                            <constraint firstItem="4h6-KV-zZB" firstAttribute="height" secondItem="zSC-ul-OWW" secondAttribute="height" id="8kk-7k-L3C"/>
+                            <constraint firstItem="zSC-ul-OWW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="93b-n2-u0d"/>
+                            <constraint firstAttribute="trailing" secondItem="4h6-KV-zZB" secondAttribute="trailing" constant="20" id="E44-hf-j37"/>
+                            <constraint firstAttribute="trailing" secondItem="bzz-30-xWg" secondAttribute="trailing" constant="20" id="KNA-VP-YiH"/>
+                            <constraint firstItem="4h6-KV-zZB" firstAttribute="leading" secondItem="zSC-ul-OWW" secondAttribute="trailing" constant="10" id="Pcc-bF-bOw"/>
+                            <constraint firstItem="bzz-30-xWg" firstAttribute="top" secondItem="4h6-KV-zZB" secondAttribute="bottom" constant="20" id="Rel-hA-faj"/>
+                            <constraint firstItem="4h6-KV-zZB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="TMt-Gm-zLQ"/>
+                            <constraint firstItem="4h6-KV-zZB" firstAttribute="leading" secondItem="zSC-ul-OWW" secondAttribute="trailing" constant="10" id="dWU-rf-NR0"/>
+                            <constraint firstItem="4h6-KV-zZB" firstAttribute="width" secondItem="zSC-ul-OWW" secondAttribute="width" id="fKW-cp-S0u"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bzz-30-xWg" secondAttribute="bottom" constant="20" id="kyR-g1-i43"/>
+                            <constraint firstItem="bzz-30-xWg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="yCL-sH-yVL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="294"/>
+        </scene>
+    </scenes>
+</document>
