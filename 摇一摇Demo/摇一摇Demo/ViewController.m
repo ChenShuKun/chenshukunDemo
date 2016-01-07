@@ -16,17 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    /*
     // 设置允许摇一摇功能
     [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;
     // 并让自己成为第一响应者
     [self becomeFirstResponder];
-    
+    */
     //////////////    //////////////    //////////////    //////////////
     
     // 使用近距离传感器
     [UIDevice currentDevice].proximityMonitoringEnabled = YES;
-
+    
+    //通过通知 来监听距离的远近
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximitySensorChange:) name:UIDeviceProximityStateDidChangeNotification object:nil];
+    
 }
 
 #pragma mark - 摇一摇相关方法
