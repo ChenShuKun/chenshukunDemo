@@ -13,6 +13,7 @@
 		BB4B8AF11C3D4F8E00B9DD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4B8AEF1C3D4F8E00B9DD0B /* Main.storyboard */; };
 		BB4B8AF31C3D4F8E00B9DD0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4B8AF21C3D4F8E00B9DD0B /* Assets.xcassets */; };
 		BB4B8AF61C3D4F8E00B9DD0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4B8AF41C3D4F8E00B9DD0B /* LaunchScreen.storyboard */; };
+		BB7C08F31C3EA3C200278F57 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB7C08F21C3EA3C200278F57 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BB4B8AF21C3D4F8E00B9DD0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB4B8AF51C3D4F8E00B9DD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB4B8AF71C3D4F8E00B9DD0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB7C08F21C3EA3C200278F57 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB7C08F31C3EA3C200278F57 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 		BB4B8ADA1C3D4F8E00B9DD0B = {
 			isa = PBXGroup;
 			children = (
+				BB7C08F21C3EA3C200278F57 /* CoreMotion.framework */,
 				BB4B8AE51C3D4F8E00B9DD0B /* 传感器Demo */,
 				BB4B8AE41C3D4F8E00B9DD0B /* Products */,
 			);
@@ -300,6 +304,7 @@
 				BB4B8AFC1C3D4F8E00B9DD0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

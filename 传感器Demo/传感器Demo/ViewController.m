@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <CoreMotion/CoreMotion.h>
 
 @interface ViewController () <UIAccelerometerDelegate>
 {
@@ -32,7 +33,7 @@
     _label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
     _label.center = CGPointMake(winRect.size.width * 0.5, winRect.size.height * 0.5);
     _label.text = @"Droid";
-    _label.textAlignment = UITextAlignmentCenter;
+    _label.textAlignment = NSTextAlignmentCenter;
     _label.backgroundColor = [UIColor greenColor];
     [self.view addSubview:_label];
 
@@ -40,6 +41,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    
     //召唤加速度传感器
     UIAccelerometer *accelerometer = [UIAccelerometer sharedAccelerometer];
     //设置加速度传感器的 接收加速度通知的时间间隔
@@ -47,6 +50,8 @@
     accelerometer.updateInterval = 1.0/60.0;
     //下面这个不设置，代理方法就不会调用
     accelerometer.delegate = self;
+    
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -55,6 +60,9 @@
     //不要忘了停止传感器的工作
     //结束加速度传感器的工作
     _speedX = _speedY = 0;
+    
+    
+    
     UIAccelerometer *accelerometer = [UIAccelerometer sharedAccelerometer];
     accelerometer.delegate = nil;
 }
