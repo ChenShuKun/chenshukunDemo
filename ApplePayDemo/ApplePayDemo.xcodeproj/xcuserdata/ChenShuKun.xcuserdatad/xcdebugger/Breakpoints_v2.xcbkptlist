@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
-            landmarkName = "-paymentAuthorizationViewController:didAuthorizePayment:completion:"
+            landmarkName = "-payAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

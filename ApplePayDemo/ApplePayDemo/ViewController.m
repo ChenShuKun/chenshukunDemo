@@ -24,9 +24,13 @@
     2 . 去 iOS 开发者中心的位于 Identifiers > Merchant ID的页面。创建证书
     3 . 在创建 Certificate Signing Reques 的时候 需要选择 对应的算法 和 256 长度
        ( 设置密钥对信息如下:算法:ECC关键尺寸:256位单击Continue在钥匙链访问完成CSR生成过程)
-    4 .重新请求 证书
+    4 . 重新请求 证书
+    5 . 必须要用 模拟器 来运行 否则报错
  
  */
+    /* 参考 资料 http://www.cocoachina.com/ios/20141024/10026.html
+        http://www.cocoachina.com/ios/20140910/9573.html
+     */
 
 }
 
