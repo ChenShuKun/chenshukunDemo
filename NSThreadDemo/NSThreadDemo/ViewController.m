@@ -16,7 +16,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
+    self.initName = @"chenshkun";
+    
+    NSLog(@"self .initName = \n %@",self.get_name);
+    
+    
+    [NSThread detachNewThreadSelector:@selector(test) toTarget:self withObject:nil];
+    NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(test) object:nil];
+    [thread start];
+    
+    
+    
+    if ([thread isMainThread]) {
+        NSLog(@"  ===== ");
+    }
+    
+}
+
+int a  = 0;
+- (void)test {
+
+    NSLog(@"-- %d",a++);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic,copy,setter=set_name:,getter = get_name ) NSString *initName;
 
 @end
 
