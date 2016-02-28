@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+/** 注释 */
+@property (nonatomic,copy) NSString *name;
+
 
 @end
 

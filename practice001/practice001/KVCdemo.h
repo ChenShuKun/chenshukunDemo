@@ -10,4 +10,16 @@
 
 @interface KVCdemo : NSObject
 
+/** name */
+@property (nonatomic,copy) NSString *name;
+/** age */
+@property (nonatomic,assign) NSInteger age;
+
+/** address */
+@property (nonatomic,copy) NSString *address;
+
+
+-(instancetype)initWithDict:(NSDictionary *)dic;
++(KVCdemo *)kvcdemoWithDict:(NSDictionary *)dict;
+
 @end

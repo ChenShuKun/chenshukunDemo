@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "KVCdemo.h"
 
 #define  DDLog(...)  NSLog(__VA_ARGS__)
 
@@ -14,7 +15,9 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    KVCdemo *kvc;
+}
 
 
 - (void)viewDidLoad {
@@ -22,9 +25,15 @@
     
     NSArray *array = @[@"10-12",@"11-12",@"10-12",@"10-13",@"11-12",@"10-15",@"11-15"];
 
-    [self method_one_WithArray:array];
-    [self method_two_WithArray:array];
-    [self method_three_WithArray:array];
+//    [self method_one_WithArray:array];
+//    [self method_two_WithArray:array];
+//    [self method_three_WithArray:array];
+        [self kvcDemo];
+    
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 200, 80, 40)];
+    [button addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
+    button.backgroundColor= [UIColor redColor];
+    [self.view addSubview:button];
 }
 
 // 去除一个 数组 的重复的 数组
@@ -66,4 +75,40 @@
     DDLog(@" %s == after == %lu",__func__, set.array.count );
     
 }
+
+
+- (void)kvcDemo {
+    
+    NSDictionary *dict = @{@"name":@"chenshukun",@"age":[NSNumber numberWithInt:23],@"address":@"北京 蓝天嘉园"};
+    
+//    KVCdemo *kvc = [KVCdemo kvcdemoWithDict:dict];
+    kvc = [[ KVCdemo alloc]initWithDict:dict];
+    kvc.name = @"chenshukun";
+
+    DDLog(@" --- name = %@  age = %ld  address = %@",kvc.name,(long)kvc.age,kvc.address);
+
+    NSString *context = @"kvo test";
+    [kvc addObserver:[[KVCdemo alloc] init] forKeyPath:@"name" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:(__bridge void * _Nullable)(context)];
+    
+    
+}
+
+
+- (void)button:(UIButton *)button {
+    
+    kvc.name = @" chenshukun --- 000";
+}
+
+
+-(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    
+    DDLog(@"\n keyPath=%@  \n object=%@ \n change=%@ =\n context =%@",keyPath,object,change,context);
+    
+   
+    
+    
+}
+
+
 @end
