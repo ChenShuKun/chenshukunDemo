@@ -28,11 +28,12 @@
 //    [self method_one_WithArray:array];
 //    [self method_two_WithArray:array];
 //    [self method_three_WithArray:array];
-        [self kvcDemo];
+//     [self kvcDemo];
     
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 200, 80, 40)];
     [button addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
     button.backgroundColor= [UIColor redColor];
+    [button setTitle:@"测试" forState: UIControlStateNormal];
     [self.view addSubview:button];
 }
 
@@ -97,18 +98,26 @@
 - (void)button:(UIButton *)button {
     
     kvc.name = @" chenshukun --- 000";
+    [self dateWithString:@"2015-04-10"];
 }
 
 
 -(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    
     DDLog(@"\n keyPath=%@  \n object=%@ \n change=%@ =\n context =%@",keyPath,object,change,context);
     
-   
+}
+// 请把字符串2015-04-10格式化日期转为NSDate类型
+- (NSDate *)dateWithString:(NSString *)string {
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    formatter.dateFormat = @"YYYY-MM-DD";
+    formatter.timeZone = [NSTimeZone defaultTimeZone];
     
+    NSDate *date = [formatter dateFromString:string];
+    DDLog(@"date == %@",date);
+    return date;
     
 }
-
 
 @end
