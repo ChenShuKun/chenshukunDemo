@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--剪刀石头布-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="剪刀石头布" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watch2_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView alignment="center" image="anime0" id="05k-4X-mok"/>
+                        <button width="1" alignment="left" title="开始" id="HsX-u9-hZs">
+                            <connections>
+                                <action selector="startGame" destination="AgC-eL-Hgc" id="ipR-qQ-2Bq"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="imgAnime" destination="05k-4X-mok" id="Oz8-ao-mEC"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
