@@ -41,7 +41,9 @@
      简单选择排序，每趟循环只能确定一个元素排序后的定位。我们可以考虑改进为每趟循环确定两个元素（当前趟最大和最小记录）的位置,从而减少排序所需的循环次数。改进后对n个数据进行排序，最多只需进行[n/2]趟循环即可
      */
     
-    [self insertSort];
+//    [self insertSort];
+    
+    [self test];
 }
 
 
@@ -122,6 +124,10 @@ void cselectedSort(int a[], int n) {
     NSLog(@"---%@",_array);
 }
 
+#pragma mark:- 希尔排序
+- (void)test {
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
