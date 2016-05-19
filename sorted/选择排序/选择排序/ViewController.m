@@ -44,6 +44,8 @@
 //    [self insertSort];
     
     [self test];
+    
+    
 }
 
 
@@ -126,7 +128,7 @@ void cselectedSort(int a[], int n) {
 
 #pragma mark:- 希尔排序
 - (void)test {
-    
+    NSLog(@"---== %.2f",3.1415326);
 }
 
 - (void)didReceiveMemoryWarning {
