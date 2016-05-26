@@ -7,9 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "People.h"
+#import <objc/runtime.h>
 
 @interface ViewController ()
 @property (nonatomic,strong) NSMutableArray *array;
+
 @end
 
 @implementation ViewController
@@ -45,6 +48,26 @@
     
     [self test];
     
+    
+    /*在 oc 中没有 绝对的私有属性
+     */
+    People *p = [[People alloc]init];
+    [p setValue:@"chenshukun" forKey:@"_name"];
+    
+    [p setValue:@"北京六道口" forKey:@"address"];
+    
+    
+    
+    //获取 对象的私有属性
+    Ivar name = class_getInstanceVariable([People class], "_name");
+    NSString *userName = object_getIvar(p, name);
+    
+    NSLog(@"===name = %@",userName);
+    
+    Ivar address = class_getInstanceVariable([People class], "address");
+    NSString *newAddress = object_getIvar(p, address);
+    
+    NSLog(@"===newAddress = %@",newAddress);
     
 }
 

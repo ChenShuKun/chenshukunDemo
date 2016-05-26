@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB579C861CEF47EA000ECF66 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = BB579C851CEF47EA000ECF66 /* People.m */; };
 		BB7905BD1CEB508700EF81D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7905BC1CEB508700EF81D7 /* main.m */; };
 		BB7905C01CEB508700EF81D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7905BF1CEB508700EF81D7 /* AppDelegate.m */; };
 		BB7905C31CEB508700EF81D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7905C21CEB508700EF81D7 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB579C841CEF47EA000ECF66 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
+		BB579C851CEF47EA000ECF66 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
 		BB7905B81CEB508700EF81D7 /* 选择排序.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "选择排序.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7905BC1CEB508700EF81D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BB7905BE1CEB508700EF81D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +65,8 @@
 				BB7905BF1CEB508700EF81D7 /* AppDelegate.m */,
 				BB7905C11CEB508700EF81D7 /* ViewController.h */,
 				BB7905C21CEB508700EF81D7 /* ViewController.m */,
+				BB579C841CEF47EA000ECF66 /* People.h */,
+				BB579C851CEF47EA000ECF66 /* People.m */,
 				BB7905C41CEB508700EF81D7 /* Main.storyboard */,
 				BB7905C71CEB508700EF81D7 /* Assets.xcassets */,
 				BB7905C91CEB508700EF81D7 /* LaunchScreen.storyboard */,
@@ -149,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB579C861CEF47EA000ECF66 /* People.m in Sources */,
 				BB7905C31CEB508700EF81D7 /* ViewController.m in Sources */,
 				BB7905C01CEB508700EF81D7 /* AppDelegate.m in Sources */,
 				BB7905BD1CEB508700EF81D7 /* main.m in Sources */,
@@ -300,6 +306,7 @@
 				BB7905D11CEB508700EF81D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
