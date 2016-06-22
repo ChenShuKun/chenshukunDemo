@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NSArchiver/ViewController.m"
-            timestampString = "488203616.521989"
+            timestampString = "488213551.546992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "-test1"
             landmarkType = "5">
          </BreakpointContent>
