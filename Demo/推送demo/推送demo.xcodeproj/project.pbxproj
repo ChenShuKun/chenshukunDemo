@@ -128,6 +128,10 @@
 				TargetAttributes = {
 					BB8B75251D11884F005DB30D = {
 						CreatedOnToolsVersion = 7.3.1;
+<<<<<<< HEAD
+=======
+						DevelopmentTeam = U96S423BN5;
+>>>>>>> 486a6c570a5406257c4302b9033641808d4741d3
 					};
 				};
 			};
@@ -281,9 +285,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer: hao chen (QVTQ8855EC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hao chen (QVTQ8855EC)";
 				INFOPLIST_FILE = "推送demo/Info.plist";
+=======
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "推送demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+>>>>>>> 486a6c570a5406257c4302b9033641808d4741d3
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -291,7 +302,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CHENSHUKUN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "2bbe022d-9ba8-4c61-842a-d1fd328b1e62";
+=======
+				PROVISIONING_PROFILE = "";
+>>>>>>> 486a6c570a5406257c4302b9033641808d4741d3
 			};
 			name = Debug;
 		};
@@ -299,9 +314,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer: hao chen (QVTQ8855EC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hao chen (QVTQ8855EC)";
 				INFOPLIST_FILE = "推送demo/Info.plist";
+=======
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "推送demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+>>>>>>> 486a6c570a5406257c4302b9033641808d4741d3
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,7 +331,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CHENSHUKUN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "2bbe022d-9ba8-4c61-842a-d1fd328b1e62";
+=======
+				PROVISIONING_PROFILE = "";
+>>>>>>> 486a6c570a5406257c4302b9033641808d4741d3
 			};
 			name = Release;
 		};
@@ -332,6 +358,10 @@
 				BB8B753F1D11884F005DB30D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+<<<<<<< HEAD
+=======
+			defaultConfigurationName = Release;
+>>>>>>> 486a6c570a5406257c4302b9033641808d4741d3
 		};
 /* End XCConfigurationList section */
 	};
