@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB8BEBCA1D1AE6DC00C15961 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8BEBC71D1AE6DC00C15961 /* KeychainItemWrapper.m */; };
+		BB8BEBCB1D1AE6DC00C15961 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8BEBC91D1AE6DC00C15961 /* NSString+UUID.m */; };
 		BB8E84651CE22D700036247D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8E84641CE22D700036247D /* main.m */; };
 		BB8E84681CE22D700036247D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8E84671CE22D700036247D /* AppDelegate.m */; };
 		BB8E846B1CE22D700036247D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8E846A1CE22D700036247D /* ViewController.m */; };
@@ -14,10 +16,13 @@
 		BB8E84701CE22D700036247D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB8E846F1CE22D700036247D /* Assets.xcassets */; };
 		BB8E84731CE22D700036247D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E84711CE22D700036247D /* LaunchScreen.storyboard */; };
 		BB8E847B1CE22DC50036247D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8E847A1CE22DC50036247D /* Security.framework */; };
-		BB8E847E1CE2302D0036247D /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8E847D1CE2302D0036247D /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB8BEBC61D1AE6DC00C15961 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		BB8BEBC71D1AE6DC00C15961 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		BB8BEBC81D1AE6DC00C15961 /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UUID.h"; sourceTree = "<group>"; };
+		BB8BEBC91D1AE6DC00C15961 /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUID.m"; sourceTree = "<group>"; };
 		BB8E84601CE22D700036247D /* UUID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UUID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8E84641CE22D700036247D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BB8E84661CE22D700036247D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,8 +34,6 @@
 		BB8E84721CE22D700036247D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB8E84741CE22D700036247D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB8E847A1CE22DC50036247D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		BB8E847C1CE2302D0036247D /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		BB8E847D1CE2302D0036247D /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB8BEBC51D1AE6DC00C15961 /* UUID */ = {
+			isa = PBXGroup;
+			children = (
+				BB8BEBC61D1AE6DC00C15961 /* KeychainItemWrapper.h */,
+				BB8BEBC71D1AE6DC00C15961 /* KeychainItemWrapper.m */,
+				BB8BEBC81D1AE6DC00C15961 /* NSString+UUID.h */,
+				BB8BEBC91D1AE6DC00C15961 /* NSString+UUID.m */,
+			);
+			path = UUID;
+			sourceTree = "<group>";
+		};
 		BB8E84571CE22D700036247D = {
 			isa = PBXGroup;
 			children = (
@@ -65,8 +79,7 @@
 		BB8E84621CE22D700036247D /* UUID */ = {
 			isa = PBXGroup;
 			children = (
-				BB8E847C1CE2302D0036247D /* KeychainItemWrapper.h */,
-				BB8E847D1CE2302D0036247D /* KeychainItemWrapper.m */,
+				BB8BEBC51D1AE6DC00C15961 /* UUID */,
 				BB8E84661CE22D700036247D /* AppDelegate.h */,
 				BB8E84671CE22D700036247D /* AppDelegate.m */,
 				BB8E84691CE22D700036247D /* ViewController.h */,
@@ -158,9 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB8E847E1CE2302D0036247D /* KeychainItemWrapper.m in Sources */,
 				BB8E846B1CE22D700036247D /* ViewController.m in Sources */,
 				BB8E84681CE22D700036247D /* AppDelegate.m in Sources */,
+				BB8BEBCA1D1AE6DC00C15961 /* KeychainItemWrapper.m in Sources */,
+				BB8BEBCB1D1AE6DC00C15961 /* NSString+UUID.m in Sources */,
 				BB8E84651CE22D700036247D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

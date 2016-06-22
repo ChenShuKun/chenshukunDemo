@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "KeychainItemWrapper.h"
 #import  <Security/Security.h>
+#import "NSString+UUID.h"
 
 @interface ViewController ()
 
@@ -27,10 +28,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    NSLog(@"get UUID == %@",[ViewController UUID]);
+   
     //16DCB176-BFDB-46CC-946C-9DF40C0B5367
-    [self  hongTest];
+    NSLog(@"get UUID == %@",[ViewController UUID]);
+    
+    
+    NSLog(@"UUID = %@",[NSString UUID]);
+    
+    
+    
+//    [self  hongTest];
 }
 - (void)hongTest {
     
@@ -67,7 +74,7 @@
 }
 
 + (NSString *)UUID {
-    //com.huangyibiao.test.group
+    
     KeychainItemWrapper *wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:@"net.626Qichuang.UUID" accessGroup:@"com.chenshukun,test.group"];
     NSString *UUID = [wrapper objectForKey:(__bridge id)kSecValueData];
     
