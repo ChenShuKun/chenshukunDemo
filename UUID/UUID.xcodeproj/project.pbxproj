@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270E25853DE31A7BEF9B5C8C /* libPods-UUID.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 883895F2A55BE308F84CA253 /* libPods-UUID.a */; };
 		BB8BEBCA1D1AE6DC00C15961 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8BEBC71D1AE6DC00C15961 /* KeychainItemWrapper.m */; };
 		BB8BEBCB1D1AE6DC00C15961 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8BEBC91D1AE6DC00C15961 /* NSString+UUID.m */; };
 		BB8E84651CE22D700036247D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8E84641CE22D700036247D /* main.m */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		883895F2A55BE308F84CA253 /* libPods-UUID.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UUID.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8BEBC61D1AE6DC00C15961 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		BB8BEBC71D1AE6DC00C15961 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		BB8BEBC81D1AE6DC00C15961 /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UUID.h"; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		BB8E84721CE22D700036247D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB8E84741CE22D700036247D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB8E847A1CE22DC50036247D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DAEF56D462948B8D7168699F /* Pods-UUID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UUID.release.xcconfig"; path = "Pods/Target Support Files/Pods-UUID/Pods-UUID.release.xcconfig"; sourceTree = "<group>"; };
+		F2B3133BCB5612A6F3D1B916 /* Pods-UUID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UUID.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UUID/Pods-UUID.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,12 +46,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB8E847B1CE22DC50036247D /* Security.framework in Frameworks */,
+				270E25853DE31A7BEF9B5C8C /* libPods-UUID.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C5C62044137CF1FFBDC2B0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F2B3133BCB5612A6F3D1B916 /* Pods-UUID.debug.xcconfig */,
+				DAEF56D462948B8D7168699F /* Pods-UUID.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		873700C0110541327C923D6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				883895F2A55BE308F84CA253 /* libPods-UUID.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB8BEBC51D1AE6DC00C15961 /* UUID */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +87,8 @@
 				BB8E847A1CE22DC50036247D /* Security.framework */,
 				BB8E84621CE22D700036247D /* UUID */,
 				BB8E84611CE22D700036247D /* Products */,
+				0C5C62044137CF1FFBDC2B0A /* Pods */,
+				873700C0110541327C923D6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB8E84771CE22D700036247D /* Build configuration list for PBXNativeTarget "UUID" */;
 			buildPhases = (
+				CCBA53F7A132C2DECEAE9831 /* [CP] Check Pods Manifest.lock */,
 				BB8E845C1CE22D700036247D /* Sources */,
 				BB8E845D1CE22D700036247D /* Frameworks */,
 				BB8E845E1CE22D700036247D /* Resources */,
+				BC8938BCDCDE5B50A1ADA329 /* [CP] Embed Pods Frameworks */,
+				E04122A3F757E8CE12938CF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,6 +192,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BC8938BCDCDE5B50A1ADA329 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UUID/Pods-UUID-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCBA53F7A132C2DECEAE9831 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E04122A3F757E8CE12938CF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UUID/Pods-UUID-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BB8E845C1CE22D700036247D /* Sources */ = {
@@ -285,6 +360,7 @@
 		};
 		BB8E84781CE22D700036247D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2B3133BCB5612A6F3D1B916 /* Pods-UUID.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UUID/Info.plist;
@@ -297,6 +373,7 @@
 		};
 		BB8E84791CE22D700036247D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAEF56D462948B8D7168699F /* Pods-UUID.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UUID/Info.plist;
