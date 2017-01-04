@@ -1,0 +1,8 @@
+
+target 'PhotoBrowser' do
+
+pod 'SDWebImage'
+pod 'Masonry'
+pod 'SVProgressHUD'
+
+end
