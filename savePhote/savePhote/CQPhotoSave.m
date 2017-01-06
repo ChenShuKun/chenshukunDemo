@@ -12,14 +12,13 @@
 //定义一个全局变量的相册名字
 static NSString *photoAssetCollectionName = @"i春秋";
 
-@interface CQPhotoSave()
 
+@interface CQPhotoSave()
 @property (nonatomic, copy) saveImgBlock block;
 @property (nonatomic, strong) UIImage *saveImg;
 @end
 
 @implementation CQPhotoSave
-
 
 - (void)saveImageToPhoto:(UIImage *)image andComplete:(saveImgBlock)block {
     self.block = block;
@@ -43,7 +42,6 @@ static NSString *photoAssetCollectionName = @"i春秋";
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
     if (status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied) {
         [self returnBlockWithType:code_Denied andErrorMes:@"无法访问您的相册"];
-    
     } else if (status == PHAuthorizationStatusAuthorized) {
         [self saveImage:self.saveImg];
     } else if (status == PHAuthorizationStatusNotDetermined) {
@@ -64,8 +62,8 @@ static NSString *photoAssetCollectionName = @"i春秋";
     [[PHPhotoLibrary sharedPhotoLibrary]performChanges:^{
         
         //1.保存图片到相机胶卷中----创建图片的请求
-        assetLocalIdentifier = [PHAssetCreationRequest creationRequestForAssetFromImage:UIImage ].placeholderForCreatedAsset.localIdentifier;
-        
+        assetLocalIdentifier = [PHAssetChangeRequest creationRequestForAssetFromImage:UIImage].placeholderForCreatedAsset.localIdentifier;
+    
     } completionHandler:^(BOOL success, NSError * _Nullable error) {
         // 2.获得相簿 创建我们自己的相册
         PHAssetCollection *createdAssetCollection = [self createAssetCollection];
