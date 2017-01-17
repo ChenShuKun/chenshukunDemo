@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		26620131DB2C0F977848BBAA /* libPods-PhotoBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B96BB98D41F6BAF86B1113D7 /* libPods-PhotoBrowser.a */; };
+		BB63ACCB1E1E158000F99814 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB63ACCA1E1E158000F99814 /* StoreKit.framework */; };
+		BB63ACCE1E1E15C400F99814 /* StoreProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB63ACCD1E1E15C400F99814 /* StoreProductViewController.m */; };
+		BB65913E1E2DBDE100BA4FAF /* kImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB65913D1E2DBDE100BA4FAF /* kImageScrollView.m */; };
 		BB6887B11E16282D000E6D16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6887B01E16282D000E6D16 /* main.m */; };
 		BB6887B41E16282D000E6D16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6887B31E16282D000E6D16 /* AppDelegate.m */; };
 		BB6887B71E16282D000E6D16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6887B61E16282D000E6D16 /* ViewController.m */; };
 		BB6887BA1E16282D000E6D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB6887B81E16282D000E6D16 /* Main.storyboard */; };
 		BB6887BC1E16282D000E6D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB6887BB1E16282D000E6D16 /* Assets.xcassets */; };
 		BB6887BF1E16282D000E6D16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB6887BD1E16282D000E6D16 /* LaunchScreen.storyboard */; };
-		BB6887C91E1629A9000E6D16 /* KImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6887C81E1629A9000E6D16 /* KImageView.m */; };
 		BB6887CC1E162C17000E6D16 /* KToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6887CB1E162C17000E6D16 /* KToolBar.m */; };
 		BB6887CF1E16300B000E6D16 /* BrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6887CE1E16300B000E6D16 /* BrowserView.m */; };
 		BB9C59DC1E1BB12000BECD65 /* CQPhotoSave.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9C59DB1E1BB12000BECD65 /* CQPhotoSave.m */; };
@@ -24,6 +26,11 @@
 		0388161F33B1F82403D11D8C /* Pods-PhotoBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoBrowser/Pods-PhotoBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		7D14F72C11A26C4D12193091 /* Pods-PhotoBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoBrowser/Pods-PhotoBrowser.release.xcconfig"; sourceTree = "<group>"; };
 		B96BB98D41F6BAF86B1113D7 /* libPods-PhotoBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoBrowser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB63ACCA1E1E158000F99814 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BB63ACCC1E1E15C400F99814 /* StoreProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreProductViewController.h; sourceTree = "<group>"; };
+		BB63ACCD1E1E15C400F99814 /* StoreProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreProductViewController.m; sourceTree = "<group>"; };
+		BB65913C1E2DBDE100BA4FAF /* kImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kImageScrollView.h; sourceTree = "<group>"; };
+		BB65913D1E2DBDE100BA4FAF /* kImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kImageScrollView.m; sourceTree = "<group>"; };
 		BB6887AC1E16282D000E6D16 /* PhotoBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB6887B01E16282D000E6D16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BB6887B21E16282D000E6D16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -34,8 +41,6 @@
 		BB6887BB1E16282D000E6D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB6887BE1E16282D000E6D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB6887C01E16282D000E6D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB6887C71E1629A9000E6D16 /* KImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KImageView.h; sourceTree = "<group>"; };
-		BB6887C81E1629A9000E6D16 /* KImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KImageView.m; sourceTree = "<group>"; };
 		BB6887CA1E162C17000E6D16 /* KToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KToolBar.h; sourceTree = "<group>"; };
 		BB6887CB1E162C17000E6D16 /* KToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KToolBar.m; sourceTree = "<group>"; };
 		BB6887CD1E16300B000E6D16 /* BrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserView.h; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB63ACCB1E1E158000F99814 /* StoreKit.framework in Frameworks */,
 				26620131DB2C0F977848BBAA /* libPods-PhotoBrowser.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +86,8 @@
 				BB6887C61E16284F000E6D16 /* Browser */,
 				BB6887B21E16282D000E6D16 /* AppDelegate.h */,
 				BB6887B31E16282D000E6D16 /* AppDelegate.m */,
+				BB63ACCC1E1E15C400F99814 /* StoreProductViewController.h */,
+				BB63ACCD1E1E15C400F99814 /* StoreProductViewController.m */,
 				BB6887B51E16282D000E6D16 /* ViewController.h */,
 				BB6887B61E16282D000E6D16 /* ViewController.m */,
 				BB6887B81E16282D000E6D16 /* Main.storyboard */,
@@ -103,10 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				BB9C59D91E1BB12000BECD65 /* savePhoto */,
-				BB6887C71E1629A9000E6D16 /* KImageView.h */,
-				BB6887C81E1629A9000E6D16 /* KImageView.m */,
 				BB6887CA1E162C17000E6D16 /* KToolBar.h */,
 				BB6887CB1E162C17000E6D16 /* KToolBar.m */,
+				BB65913C1E2DBDE100BA4FAF /* kImageScrollView.h */,
+				BB65913D1E2DBDE100BA4FAF /* kImageScrollView.m */,
 				BB6887CD1E16300B000E6D16 /* BrowserView.h */,
 				BB6887CE1E16300B000E6D16 /* BrowserView.m */,
 			);
@@ -134,6 +142,7 @@
 		FC9D7CF54A4C1B148572859F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB63ACCA1E1E158000F99814 /* StoreKit.framework */,
 				B96BB98D41F6BAF86B1113D7 /* libPods-PhotoBrowser.a */,
 			);
 			name = Frameworks;
@@ -262,10 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB6887C91E1629A9000E6D16 /* KImageView.m in Sources */,
 				BB6887B71E16282D000E6D16 /* ViewController.m in Sources */,
 				BB6887B41E16282D000E6D16 /* AppDelegate.m in Sources */,
 				BB6887CC1E162C17000E6D16 /* KToolBar.m in Sources */,
+				BB63ACCE1E1E15C400F99814 /* StoreProductViewController.m in Sources */,
+				BB65913E1E2DBDE100BA4FAF /* kImageScrollView.m in Sources */,
 				BB6887B11E16282D000E6D16 /* main.m in Sources */,
 				BB9C59DC1E1BB12000BECD65 /* CQPhotoSave.m in Sources */,
 				BB6887CF1E16300B000E6D16 /* BrowserView.m in Sources */,

@@ -7,22 +7,24 @@
 //
 
 #import "BrowserView.h"
-#import "KImageView.h"
 #import "KToolBar.h"
 #import "Masonry.h"
 #import "CQPhotoSave.h"
 #import "SVProgressHUD.h"
 
+#import "kImageScrollView.h"
+
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
-@interface BrowserView()<KToolBarDelegate,UIScrollViewDelegate>
+@interface BrowserView()<KToolBarDelegate,UIScrollViewDelegate,kImageScrollViewDelegate>
 
 @property (strong , nonatomic) NSArray *imageArray;
 @property (assign , nonatomic) NSInteger index;
 @property (strong , nonatomic) KToolBar *tooBar;
 @property (strong , nonatomic) UIScrollView *scrollerView;
 @property (strong , nonatomic) CQPhotoSave *savePhoto;
+
 @end
 
 @implementation BrowserView
@@ -33,30 +35,55 @@
         self.imageArray = imgArr;
         self.index = currentIndex;
         [self initSubViews];
-        self.backgroundColor = [UIColor blackColor];
+        
     }
     return self;
 }
 
 - (void)initSubViews {
-
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+    
+    self.backgroundColor = [UIColor blackColor];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTapAction)];
     tap.numberOfTapsRequired = 1;
     [self addGestureRecognizer:tap];
     
     if (self.index >= self.imageArray.count || self.index == 0) {
         self.index = 1;
     }
+    
     self.scrollerView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     self.scrollerView.pagingEnabled = YES;
     self.scrollerView.showsHorizontalScrollIndicator = NO;
     self.scrollerView.showsVerticalScrollIndicator = NO;
     self.scrollerView.delegate = self;
+    self.scrollerView.maximumZoomScale = 3;
+    self.scrollerView.minimumZoomScale = 1;
     self.scrollerView.contentSize = CGSizeMake(ScreenWidth*self.imageArray.count , ScreenHeight);
     [self.scrollerView setContentOffset:CGPointMake((self.index-1)*ScreenWidth, 0) animated:YES];
     [self addSubview:self.scrollerView];
     
     [self initBrowser];
+    
+    [self initLabelText];
+}
+
+- (void)initBrowser {
+
+    for (int i = 0 ;i < self.imageArray.count; i++) {
+       
+        NSString *url = self.imageArray[i];
+        kImageScrollView *imageView = [[kImageScrollView alloc]initWithtWithKImageViewStr:url];
+        imageView.imageDelegate = self;
+        imageView.frame = CGRectMake(ScreenWidth*i, 0, ScreenWidth, ScreenHeight);
+        imageView.tag = 100+i;
+        [self.scrollerView addSubview:imageView];
+        [self.tooBar setSaveButtonWthTag:200+i];
+    }
+}
+
+//下面的 文字和保存的按钮
+- (void)initLabelText {
     
     self.tooBar = [[KToolBar alloc]initWithDelegate:self];
     [self addSubview:self.tooBar];
@@ -65,45 +92,32 @@
     [self.tooBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         make.height.mas_offset(40);
-        make.bottom.equalTo(self.mas_bottom).offset(-60);
+        make.bottom.equalTo(self.mas_bottom).offset(-30);
     }];
-}
-
-- (void)initBrowser {
-
-    for (int i = 0 ;i < self.imageArray.count; i++) {
-       
-        NSString *url = self.imageArray[i];
-        KImageView *imageView = [[KImageView alloc] initWithKImageView:url];
-        imageView.frame = CGRectMake(ScreenWidth*i, 0, ScreenWidth, ScreenHeight);
-        imageView.tag = 100+i;
-        [self.scrollerView addSubview:imageView];
-        [self.tooBar setSaveButtonWthTag:200+i];
-    }
 }
 
 - (void)setLabelIndex:(NSInteger)current {
     NSString *str = [NSString stringWithFormat:@"%@/%@",@(current),@(self.imageArray.count)];
     [self.tooBar setLabelText:str];
 }
+
 #pragma mark:-- action
 - (void)buttonAction:(UIButton *)button {
     
     int x = self.scrollerView.contentOffset.x / ScreenWidth;
-    NSLog(@"x = %@",@(x));
     if (self.imageArray.count >= x) {
         
-        NSString *url = self.imageArray[x];
-        NSLog(@"url = %@",url);
-        KImageView *imageView = (KImageView *)[self.scrollerView viewWithTag:100+x];
+        kImageScrollView *imageView = (kImageScrollView *)[self.scrollerView viewWithTag:100+x];
         __weak typeof(self) weak = self;
-        [self.savePhoto saveImageToPhoto:imageView.image andComplete:^(code errorCode, NSString *errorStr) {
+        UIImage *image = [imageView scrollViewImage];
+        
+        [self.savePhoto saveImageToPhoto:image andComplete:^(code errorCode, NSString *errorStr) {
             [weak savePhotoActionWithType:errorCode andMessage:errorStr];
         }];
     }
 }
 
--(CQPhotoSave *)savePhoto {
+- (CQPhotoSave *)savePhoto {
     if (!_savePhoto) {
         _savePhoto = [[CQPhotoSave alloc]init];
     }
@@ -111,26 +125,30 @@
 }
 
 - (void)savePhotoActionWithType:(code)errorCode andMessage:(NSString *)mesg {
+   
     if (errorCode == code_ToMyPhotoSucceed) {
-        NSLog(@"保存成功  ++++++");
+        [SVProgressHUD setMinimumDismissTimeInterval:2];
         [SVProgressHUD showSuccessWithStatus:@"保存到相册成功"];
     }else {
         NSLog(@"保存失败  errorInfo = %@",mesg);
         [SVProgressHUD showErrorWithStatus:mesg];
     }
 }
-- (void)tapAction:(UITapGestureRecognizer *)tap {
+
+
+#pragma mark:-- 隐藏 aciton
+- (void)singleTapAction {
     [self hiddenView];
 }
 
 - (void)show {
-    [UIView animateWithDuration:0.35 animations:^{
+    [UIView animateWithDuration:0.75 animations:^{
         self.alpha = 1;
     }];
 }
 
 - (void)hiddenView {
-    [UIView animateWithDuration:0.35 animations:^{
+    [UIView animateWithDuration:0.75 animations:^{
         self.alpha = 0;
         [self removeFromSuperview];
     }];
@@ -141,4 +159,5 @@
     int x = scrollView.contentOffset.x / ScreenWidth;
     [self setLabelIndex:x+1];
 }
+
 @end

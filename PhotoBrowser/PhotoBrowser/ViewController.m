@@ -9,7 +9,12 @@
 #import "ViewController.h"
 #import "BrowserView.h"
 #import  "Masonry.h"
-@interface ViewController ()
+#import "AppDelegate.h"
+#import "StoreProductViewController.h"
+
+#import <StoreKit/StoreKit.h>
+
+@interface ViewController ()<SKStoreProductViewControllerDelegate>
 
 @end
 
@@ -21,44 +26,90 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
 
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 80, 40)];
-    [button setTitle:@"show1" forState:UIControlStateNormal];
-    button.backgroundColor = [UIColor redColor];
-    [button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-    
-    UIButton *button1 = [[UIButton alloc]initWithFrame:CGRectMake(200, 100, 80, 40)];
-    [button1 setTitle:@"show3" forState:UIControlStateNormal];
-    button1.backgroundColor = [UIColor orangeColor];
-    [button1 addTarget:self action:@selector(buttonAction2) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button1];
+    for (int i = 0; i < [self buttonTitleArray].count; i++) {
+        
+        NSString *title = [self buttonTitleArray][i];
+        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(30 + (90*i), 100, 80, 40)];
+        [button setTitle:title forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor redColor];
+        
+        SEL func = NSSelectorFromString([NSString stringWithFormat:@"buttonAction%@",@(i)]);
+        [button addTarget:self action:func forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        
 
+    }
+   
+    
+}
+- (NSArray *)buttonTitleArray {
+    return @[@"show1",@"show2",@"appStore"];
+}
+
+- (void)buttonAction0 {
+    NSLog(@"buttonAction subViews = %@",self.view.subviews);
+    
+   [self addSubViewsWithIndex:0];
     
 }
 
-- (void)buttonAction {
-    NSLog(@"buttonAction subViews = %@",self.view.subviews);
-    
-    
-    BrowserView *brow = [[BrowserView alloc] initWithImageArray:[self array] andCurrentIndex:1];
-    [brow show];
-    [self.view addSubview:brow];
-    [brow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+- (void)buttonAction1 {
+    NSLog(@"buttonAction2 subViews = %@",self.view.subviews);
+
+    [self addSubViewsWithIndex:3];
 }
 
 - (void)buttonAction2 {
-    NSLog(@"buttonAction2 subViews = %@",self.view.subviews);
+    
+    [self presentAppStoreWithAPPID:@"1155876473"];
+}
 
-    BrowserView *brow = [[BrowserView alloc] initWithImageArray:[self array] andCurrentIndex:3];
-    [brow show];
-    [self.view addSubview:brow];
-    [brow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+#pragma mark:-- 模态出来 调到 AppStore中
+- (void)presentAppStoreWithAPPID:(NSString*)appID {
+    /**
+     使用该类 需要添加 StoreKit FrameWork
+     **/
+
+    if ([appID length] == 0 || appID == nil) {
+        return;
+    }
+    //初始化控制器
+    SKStoreProductViewController *storeProductViewContorller =[[SKStoreProductViewController alloc] init];
+    //设置代理请求为当前控制器本身
+    storeProductViewContorller.delegate = self;
+    //加载一个新的视图展示
+    [storeProductViewContorller loadProductWithParameters:
+     @{SKStoreProductParameterITunesItemIdentifier:appID}//appId唯一的
+                                          completionBlock:^(BOOL result, NSError *error) {
+                                              //block回调
+                                              if(error){
+                                                  NSLog(@"error %@ with userInfo %@",error,[error userInfo]);
+                                              }else{
+                                                  //模态弹出appstore
+                                                  [self presentViewController:storeProductViewContorller animated:YES completion:^{}];
+                                              }
+                                          }
+     
+     ];
+}
+
+#pragma mark - SKStoreProductViewControllerDelegate
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+    [viewController dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"dismiss");
     }];
 }
 
+- (void)addSubViewsWithIndex:(NSInteger)index {
+    
+    BrowserView *brow = [[BrowserView alloc] initWithImageArray:[self array] andCurrentIndex:index];
+    [brow show];
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    [window addSubview:brow];
+    [brow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(window);
+    }];
+}
 
 - (NSArray *)array {
     NSArray *array = @[
