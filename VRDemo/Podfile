@@ -1,0 +1,12 @@
+
+
+platform :ios, '8.0'
+target 'VRDemo' do
+
+
+
+
+pod 'Masonry'
+pod 'CardboardSDK'
+
+end

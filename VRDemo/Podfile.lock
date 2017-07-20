@@ -1,0 +1,15 @@
+PODS:
+  - CardboardSDK (0.7.2)
+  - Masonry (1.0.2)
+
+DEPENDENCIES:
+  - CardboardSDK
+  - Masonry
+
+SPEC CHECKSUMS:
+  CardboardSDK: 42aa8f9e638515abb5991460c3091edc969027d4
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+
+PODFILE CHECKSUM: f7d9273cbbf659f8cbc67048a276036209af5997
+
+COCOAPODS: 1.0.1
